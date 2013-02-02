@@ -15,7 +15,7 @@ abstract class OAuth2[T](settings: OAuth2Settings){
   def user(body: String): T
 
   import settings._
-  lazy val signIn = signInUrl + "?client_id=" + clientId
+  lazy val signIn = signInUrl + "?client_id=" + clientId+"&scope=repo"
   var token="";
 
   def requestAccessToken(code: String): Option[String] = {

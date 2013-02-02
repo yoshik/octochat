@@ -16,6 +16,7 @@ abstract class OAuth2[T](settings: OAuth2Settings){
 
   import settings._
   lazy val signIn = signInUrl + "?client_id=" + clientId
+  var token="";
 
   def requestAccessToken(code: String): Option[String] = {
     val resp = WS.url(accessTokenUrl +
@@ -27,6 +28,8 @@ abstract class OAuth2[T](settings: OAuth2Settings){
 
   def authenticate(code: String) = requestAccessToken(code).map(requestUserInfo)
 
-  def requestUserInfo(accessToken: String): T =
+  def requestUserInfo(accessToken: String): T ={
+    token=accessToken;
     user(WS.url(userInfoUrl + "?access_token=" + accessToken).get.value.get.body)
+    }
 }

@@ -61,7 +61,6 @@ object Auth extends Controller {
           case Some(v) => v
           case _ => ""
           }
-
       )
     }
     def toSession(formvalue: GithubUser, session: Session,token:String): Session = {

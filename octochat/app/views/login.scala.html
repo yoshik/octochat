@@ -2,7 +2,10 @@
 
 @main("Welcome to Play 2.0") {
 
-    @user
-    <img src="@icon">
-    @body
+    @user<br>
+    <img src="@icon"><br>
+    @body.map{room=>
+    @room<br>
+     
+    }
 }

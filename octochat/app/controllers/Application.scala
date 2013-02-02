@@ -11,7 +11,7 @@ object Application extends Controller {
     implicit request =>
     session.get("login").map {login=>
         val user = GithubUser.fromSession(session)
-        Ok(views.html.login(user.login)(user.avatar_url)(APIs.repos_parse(user.token)))
+        Ok(views.html.login(user.login)(user.avatar_url)(APIs.rooms(user.token)))
     }.getOrElse {
       Ok(views.html.index("NotLogin"))
     }

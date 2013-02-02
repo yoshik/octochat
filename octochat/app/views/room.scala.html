@@ -4,12 +4,13 @@
 @import helper._
 @implicitFieldConstructor = @{ FieldConstructor(views.html.twitterBootstrapInput.f) }
 
-@main("title") {
+@main("Octochat:Room") {
 <div class="navbar">
   <div class="navbar-inner">
     <a class="brand" href="/">OctoChat</a>
     <ul class="nav">
       <li ><a href="/">Rooms</a></li>
+      <li><a href="/timeline">TimeLine</a></li>
       <li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>
     </ul>
     <ul class="nav pull-right">

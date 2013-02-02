@@ -10,10 +10,11 @@ GET     /signin                     controllers.Auth.signin
 GET     /signout                    controllers.Auth.signout
 GET     /callback                   controllers.Auth.callback
 
+GET     /timeline                   controllers.Room.timeline
+
+
 GET     /room/:owner/:repo          controllers.Room.view(owner:String,repo:String)
-
 POST    /room/:owner/:repo/:author  controllers.Chat.post(owner:String,repo:String,author:String)
-
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

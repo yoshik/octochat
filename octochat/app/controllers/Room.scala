@@ -17,4 +17,10 @@ object Room extends Controller {
       Ok(views.html.index())
     }
   }
+  
+  def timeline = Action {
+    Ok(views.html.timeline(ChatModel.all()))
+  }
+  
+  
 }

@@ -21,9 +21,9 @@ object Room extends Controller {
   def timeline = Action { implicit request =>
     val user = GithubUser.fromSession(session)
     val rooms = APIs.rooms(user.token)
-    Ok(views.html.timeline(ChatModel.all().collect({
-      case post if rooms.contains(post.owner + "/" + post.repo) => post
-    })))
+    Ok(views.html.timeline(ChatModel.all().filter( post =>
+      rooms.contains(post.owner + "/" + post.repo)
+    )))
   }
   
   

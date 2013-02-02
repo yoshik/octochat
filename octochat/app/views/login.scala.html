@@ -1,8 +1,8 @@
-@(user: String)(icon:String)(token:String)
+@(user: String)(icon:String)(body:Seq[String])
 
 @main("Welcome to Play 2.0") {
 
     @user
     <img src="@icon">
-    @token
+    @body
 }

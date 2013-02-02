@@ -14,5 +14,11 @@ object APIs extends Controller {
     WS.url(rootUrl+reposUrl+"?access_token="+token).get.value.get.body;
   }
   
-  
+  def repos_parse(token:String) ={
+    val jsonString = repos(token:String);
+    val json = Json.parse(jsonString)
+    
+    (json \\ "name").map(_.as[String])
+
+  }
 }

@@ -1,1 +1,11 @@
-hello.
+Qiita 2-day hackathonでつくりました
+
+インストール
+・java javacをいれる。
+　※yum install javaとかじゃなくて、Oracleから最新のJDKを取ってくる
+・Scalaをいれる。
+・Play2.0.4をいれる。
+
+ビルド
+　$cd octochat
+　$play run

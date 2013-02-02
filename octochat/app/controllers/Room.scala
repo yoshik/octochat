@@ -17,6 +17,7 @@ object Room extends Controller {
       Ok(views.html.index())
     }
   }
+
   
   def timeline = Action {
     implicit request =>
@@ -29,4 +30,17 @@ object Room extends Controller {
   }
   
   
+  def watch = Action { implicit request =>
+    session.get("login").map {login=>
+      val user = GithubUser.fromSession(session)
+      val rooms = APIs.rooms(user.token)
+      Ok(views.html.watch(user.login, user.avatar_url)(ChatModel.all().filter( post =>
+        rooms.contains(post.owner + "/" + post.repo)
+      )))
+    }.getOrElse {
+      Ok(views.html.index())
+    }
+  }
+
+
 }

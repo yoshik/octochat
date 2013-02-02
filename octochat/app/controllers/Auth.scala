@@ -8,8 +8,8 @@ import play.api.libs.json._
 object Auth extends Controller {
 
   val GITHUB = new OAuth2[GithubUser](OAuth2Settings(
-    "ce99b5e59f36010082b4",//clientID
-    "90bb8d04f89ba13db43beb784c69625288876851",//clientSecret
+    "xxxx",//clientID
+    "xxxxxxxxx",//clientSecret
     "https://github.com/login/oauth/authorize",
     "https://github.com/login/oauth/access_token",
     "https://api.github.com/user"

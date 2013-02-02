@@ -32,4 +32,24 @@
 </div>
 <br>
 <h3 class="text-center"><a href="/help"><i class="icon-question-sign"></i> Help</a></h3>
+
+}{
+<script>
+  function toast(){
+  toastr.options = {
+   fadeIn:1000,
+   fadeOut:1000,
+   timeOut:2000,
+   extendedTimeOut:2000,
+   positionClass:'toast-top-right',
+   debug:false
+   };
+    toastr.options.onclick =  function (){window.open('/help');};
+    toastr.info("Please Watch repository","Hint");
+  }
+  
+  $(document).ready(function () {
+    toast();
+  });
+</script>
 }

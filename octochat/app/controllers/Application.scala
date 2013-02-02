@@ -16,5 +16,8 @@ object Application extends Controller {
       Ok(views.html.index())
     }
   }
+  def help = Action {
+    Ok(views.html.help())
+  }
   
 }

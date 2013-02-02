@@ -9,6 +9,8 @@ GET     /signin                     controllers.Auth.signin
 GET     /signout                    controllers.Auth.signout
 GET     /callback                   controllers.Auth.callback
 
+GET     /room/:owner/:repo          controllers.Room.view(owner:String,repo:String)
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

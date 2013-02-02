@@ -23,7 +23,10 @@ object ChatModel {
   }
   
   def roomMessage(owner:String,repo:String): List[ChatModel] = DB.withConnection { implicit c =>
-    SQL("select * from chatmodel").as(chatmodel *)
+    SQL("select * from chatmodel where owner = {owner} AND repo = {repo}").on(
+    'owner -> owner,
+    'repo -> repo
+    ).as(chatmodel *)
   }
 
   def create(message: String, owner:String, repo:String, author:String) {

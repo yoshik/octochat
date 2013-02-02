@@ -31,8 +31,7 @@
     
         @talks.reverse.map { talk =>
         <div class="chat_row pull-center">
-          @talk.author says <strong>@talk.message</strong>
-          Debug <strong>@talk.owner/@talk.repo</strong>
+          <span class="label label-inverse">@talk.author</span>　<strong>@talk.message</strong>
         </div>
         }
         

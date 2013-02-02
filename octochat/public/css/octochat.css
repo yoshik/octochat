@@ -53,3 +53,7 @@ body {
   padding: 20px;
   margin-bottom: 10px;
 }
+.label{
+  padding: 7px !important;
+  box-shadow: inset 1px 3px 3px rgba(0,0,0,0.2);
+}

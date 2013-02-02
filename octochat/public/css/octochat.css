@@ -27,6 +27,7 @@
 
 body {
   padding: 0px;
+  background-image: url("/assets/img/noisy_grid.png");
 }
 
 .nav_icon{
@@ -48,7 +49,7 @@ body {
 .chat_row{
   width: 80%;
   max-width: 750px;
-  background-color: #fefefe;
+  background-color: rgba(255,255,255,0.7);
   box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
   padding: 20px;
   margin-bottom: 10px;
@@ -62,5 +63,6 @@ h1,h2,h3,h4{
   text-shadow:0px 1px 2px rgba(0,0,0,0.5)
 }
 th:hover{
-  background-color: #bbbbff;
+  background-color: rgba(0,0,30,0.1);
+  box-shadow: inset 0px 1px 3px 3px rgba(0,0,0,0.1);
 }

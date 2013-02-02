@@ -13,7 +13,7 @@ object Chat extends Controller {
     
   def post(owner:String,repo:String,author:String) = Action { implicit request =>
     messageForm.bindFromRequest.fold(
-      errors => BadRequest(views.html.index("error")),
+      errors => BadRequest(views.html.index()),
       message => {
         ChatModel.create(message,owner,repo,author)
         Redirect(routes.Room.view(owner,repo))

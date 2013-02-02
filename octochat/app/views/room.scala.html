@@ -2,35 +2,41 @@
 
 
 @import helper._
+@implicitFieldConstructor = @{ FieldConstructor(views.html.twitterBootstrapInput.f) }
 
 @main("title") {
-   
-    <h1>@talks.size message</h1>
-    
-    <ul>
-        @talks.map { talk =>
-            <li>
-                @talk.message
-            </li>
-        }
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">OctoChat</a>
+    <ul class="nav">
+      <li ><a href="/">Rooms</a></li>
+      <li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>
     </ul>
-    
-    <h2>Post</h2>
-    
-    @form(routes.Chat.post(owner, repo, author)) {
-        
+    <ul class="nav pull-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="/signout"><img src="@icon" class="nav_icon">　@author</a>
+        <ul class="dropdown-menu">
+          <li><a href="/signout"><i class="icon-remove-sign"></i> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    @form(routes.Chat.post(owner, repo, author),'class -> "form-horizontal") {
+        <div class="pull-center half text-center">
         @inputText(messageForm("message")) 
-        
-        <input type="submit" value="Create">
-        
+        </div>
     }
+    
+        @talks.reverse.map { talk =>
+        <div class="chat_row pull-center">
+          @talk.author says <strong>@talk.message</strong>
+          Debug <strong>@talk.owner/@talk.repo</strong>
+        </div>
+        }
+        
+    <hr><h6 class="text-right">@talks.size messages　</h6>
 
 
-@author
-<br>
-@icon
-<br>
-@owner
-<br>
-@repo
 }

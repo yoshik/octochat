@@ -1,0 +1,55 @@
+.pull-center{
+  display:block;
+  margin:auto;
+}
+.text-left{
+  text-align: left;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.clearfix{
+  display: inline-block;
+}
+
+.clearfix:after{
+  display: block;
+  clear: both;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  content: ".";
+  font-size: 0.01em;
+}
+
+body {
+  padding: 0px;
+}
+
+.nav_icon{
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.room_table_div{
+  max-width: 400px;
+}
+.room_table{
+  width: 100%;
+  max-width: 400px;
+}
+.half{
+  width: 49%;
+}
+.chat_row{
+  width: 80%;
+  max-width: 750px;
+  background-color: #fefefe;
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 10px;
+}

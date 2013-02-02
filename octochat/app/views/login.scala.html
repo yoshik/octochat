@@ -1,11 +1,31 @@
-@(user: String)(icon:String)(body:Seq[String])
+@(user: String)(icon:String)(rooms:Seq[String])
 
-@main("Welcome to Play 2.0") {
+@main("Octchat:"+user) {
 
-    @user<br>
-    <img src="@icon"><br>
-    @body.map{room=>
-    <a href="room/@room">@room</a><br>
-     
-    }
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">OctoChat</a>
+    <ul class="nav">
+      <li class="active"><a href="/">Rooms</a></li>
+    </ul>
+    <ul class="nav pull-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="/signout"><img src="@icon" class="nav_icon">　@user</a>
+        <ul class="dropdown-menu">
+          <li><a href="/signout"><i class="icon-remove-sign"></i> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="room_table_div pull-center">
+  <h1>Chat Rooms</h1>
+  <table class="table table-hover room_table">
+      @rooms.map{room=>
+        <tr><th><a href="/room/@room">@room</a></th></tr>
+      }
+  </table>
+</div>
 }

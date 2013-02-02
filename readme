@@ -6,6 +6,10 @@ Qiita 2-day hackathonでつくりました
 ・Scalaをいれる。
 ・Play2.0.4をいれる。
 
+準備
+・octochat/app/comtrollers/Auth.scalaにGithubのOAutu情報(ClientIDとClientSecret)を埋め込む
+・コールバックはデプロイ先url/callbackにする
+
 ビルド
 　$cd octochat
 　$play run

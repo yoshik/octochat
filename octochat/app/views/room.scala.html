@@ -25,6 +25,8 @@
   </div>
 </div>
 
+    <h6 class="text-right"><a href="https://github.com/@owner/@repo"><i class="icon-github-alt"></i> repository</a>　　</h6>
+
     @form(routes.Chat.post(owner, repo, author),'class -> "form-horizontal") {
         <div class="pull-center half text-center">
         @inputText(messageForm("message")) 
@@ -33,11 +35,10 @@
     
         @talks.reverse.map { talk =>
         <div class="chat_row pull-center">
-          <span class="label label-inverse">@talk.author</span>　<strong>@talk.message</strong>
+          <span class="label label-inverse"><a href="https://github.com/@talk.author">@talk.author</a></span>　<strong>@talk.message</strong>
         </div>
         }
-        
-    <hr><h6 class="text-right">@talks.size messages　</h6>
+    <hr><h6 class="text-right">@talks.size messages　　</h6>
 
 
 }{

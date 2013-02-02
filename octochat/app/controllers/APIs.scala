@@ -18,7 +18,7 @@ object APIs extends Controller {
     val jsonString = repos_row(token:String);
     val json = Json.parse(jsonString)
     
-    (json \\ "full_name").map(_.as[String])
+    (json \\ "full_name").map(_.as[String]).sorted
 
   }
 }

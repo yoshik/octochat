@@ -1,9 +1,10 @@
-@(author:String, icon:String, owner:String, repo:String)
+@(author:String, icon:String, owner:String, repo:String)(talks: List[ChatModel], messageForm: Form[String])
+
 
 @import helper._
 
 @main("title") {
-@*    
+   
     <h1>@talks.size message</h1>
     
     <ul>
@@ -16,14 +17,14 @@
     
     <h2>Post</h2>
     
-    @form(routes.Chat.post(owner,repo)) {
+    @form(routes.Chat.post(owner, repo, author)) {
         
         @inputText(messageForm("message")) 
         
         <input type="submit" value="Create">
         
     }
-*@
+
 
 @author
 <br>

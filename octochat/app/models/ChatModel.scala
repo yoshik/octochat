@@ -4,5 +4,6 @@ case class ChatModel(id: Long, message: String, author:String, icon:String, owne
 
 object ChatModel {
   def all(): List[ChatModel] = Nil
+  def roomMessage(owner:String,repo:String): List[ChatModel] = Nil
   def create(message: String, owner:String, repo:String, author:String) {}  
 }

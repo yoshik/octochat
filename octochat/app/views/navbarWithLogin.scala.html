@@ -1,14 +1,14 @@
 @(user:String,icon:String)(nav_item:Html)
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="/"><i class="icon-github"></i> OctoChat</a>
+    <a class="brand hidden-phone" href="/"><i class="icon-github"></i> OctoChat</a>
     <ul class="nav">
       <li id="nav_room"><a href="/">Rooms</a></li>
-      <li id="nav_watch"><a href="/watch">Watch Repos</a></li>
+      <li id="nav_watch"><a href="/watch">Watch<span class="hidden-phone"> Repos</span></a></li>
       <li id="nav_public"><a href="/timeline">Public</a></li>
       @nav_item
     </ul>
-    <ul class="nav pull-right">
+    <ul class="nav pull-right hidden-phone">
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="/signout"><img src="@icon" class="nav_icon">　@user</a>
         <ul class="dropdown-menu">

@@ -5,26 +5,9 @@
 @implicitFieldConstructor = @{ FieldConstructor(views.html.twitterBootstrapInput.f) }
 
 @main("OctoChat:Room") {
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="/"><i class="icon-github"></i> OctoChat</a>
-    <ul class="nav">
-      <li ><a href="/">Rooms</a></li>
-      <li><a href="/watch">Watch Repos</a></li>
-      <li><a href="/timeline">Public</a></li>
-      <li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>
-    </ul>
-    <ul class="nav pull-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="/signout"><img src="@icon" class="nav_icon">　@author</a>
-        <ul class="dropdown-menu">
-          <li><a href="https://github.com/@author"><i class="icon-github"></i> github</a></li>
-          <li><a href="/signout"><i class="icon-remove-sign"></i> Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
+
+@navbarWithLogin(author,icon){<li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>}
+
 
     <h6 class="text-right"><a href="https://github.com/@owner/@repo" class="light_link"><i class="icon-github-alt"></i> repository</a>　　</h6>
 

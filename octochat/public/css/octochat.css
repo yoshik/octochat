@@ -148,3 +148,6 @@ th:hover{
   margin-top: 10px;
   margin-left: 10px;
 }
+input{
+  width: 100% !important;
+}

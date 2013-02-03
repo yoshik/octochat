@@ -27,12 +27,12 @@
   <h1>Chat Rooms</h1>
   <table class="table room_table">
       @rooms.map{room=>
-        <tr><th><a href="/room/@room">@room</a></th></tr>
+        <tr><th><a href="/room/@room" class="room_link">@room</a></th></tr>
       }
   </table>
 </div>
-<br>
-<h3 class="text-center"><a href="/help"><i class="icon-question-sign"></i> Help</a></h3>
+<br><hr>
+<h3 class="text-center"><a href="/help" class="light_link"><i class="icon-question-sign"></i> Help</a></h3>
 
 }{
 <script>

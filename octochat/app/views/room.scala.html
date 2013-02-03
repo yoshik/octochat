@@ -6,25 +6,22 @@
 
 @main("OctoChat:Room") {
 
-@navbarWithLogin(author,icon){<li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>}
+  @navbarWithLogin(author,icon){<li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>}
 
+  <h6 class="text-right"><a href="https://github.com/@owner/@repo" class="light_link"><i class="icon-github-alt"></i> repository</a>　　</h6>
 
-    <h6 class="text-right"><a href="https://github.com/@owner/@repo" class="light_link"><i class="icon-github-alt"></i> repository</a>　　</h6>
-
-    @form(routes.Chat.post(owner, repo, author),'class -> "form-horizontal") {
-        <div class="pull-center half text-center">
-        @inputText(messageForm("message")) 
-        </div>
-    }
-    
-        @talks.reverse.map { talk =>
-        <div class="chat_row pull-center">
-          <span class="label label-inverse"><a href="https://github.com/@talk.author">@talk.author</a></span>　<strong>@talk.message</strong>
-        </div>
-        }
-    <hr><h6 class="text-right">@talks.size messages　　</h6>
-
-
+  @form(routes.Chat.post(owner, repo, author),'class -> "form-horizontal") {
+    <div class="pull-center half text-center">
+    @inputText(messageForm("message")) 
+    </div>
+  }
+  
+  @talks.reverse.map { talk =>
+    <div class="chat_row pull-center">
+      <span class="label label-inverse"><a href="https://github.com/@talk.author">@talk.author</a></span>　<strong>@talk.message</strong>
+    </div>
+  }
+  <hr><h6 class="text-right">@talks.size messages　　</h6>
 }{
 <script>
   $(document).ready(function () {

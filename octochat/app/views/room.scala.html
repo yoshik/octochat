@@ -10,7 +10,7 @@
 
   <h6 class="text-right"><a href="https://github.com/@owner/@repo" class="light_link"><i class="icon-github-alt"></i> repository</a>　　</h6>
 
-  @form(routes.Chat.post(owner, repo, author),'class -> "form-horizontal") {
+  @form(routes.Chat.post(owner, repo)) {
     <div class="pull-center half text-center">
     @inputText(messageForm("message")) 
     </div>

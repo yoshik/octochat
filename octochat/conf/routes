@@ -15,7 +15,7 @@ GET     /watch                      controllers.Room.watch
 
 
 GET     /room/:owner/:repo          controllers.Room.view(owner:String,repo:String)
-POST    /room/:owner/:repo/:author  controllers.Chat.post(owner:String,repo:String,author:String)
+POST    /room/:owner/:repo          controllers.Chat.post(owner:String,repo:String)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

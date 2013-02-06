@@ -8,11 +8,7 @@
   @navbarWithLogin(author,icon){ }
 
   @talks.reverse.map { talk =>
-  <div class="chat_row pull-center">
-    <span class="label label-info"><a href="https://github.com/@talk.owner/@talk.repo">@talk.owner / @talk.repo</a></span> 
-    <span class="label label-inverse"><a href="https://github.com/@talk.author">@talk.author</a></span>　
-    <div class="mes"><strong>@talk.message</strong></div>
-  </div>
+    @mes(talk.author,talk.owner,talk.repo,talk.message)
   }
 
   <hr><h6 class="text-right">@talks.size messages　</h6>

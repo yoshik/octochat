@@ -13,6 +13,7 @@ GET     /callback                   controllers.Auth.callback
 GET     /timeline                   controllers.Room.timeline
 GET     /watch                      controllers.Room.watch
 
+GET     /icon/:user                 controllers.APIs.icon(user:String)
 
 GET     /room/:owner/:repo          controllers.Room.view(owner:String,repo:String)
 POST    /room/:owner/:repo          controllers.Chat.post(owner:String,repo:String)

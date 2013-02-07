@@ -17,7 +17,6 @@ object Room extends Controller {
       Ok(views.html.index())
     }
   }
-
   
   def timeline = Action {
     implicit request =>
@@ -29,8 +28,8 @@ object Room extends Controller {
     }
   }
   
-  
-  def watch = Action { implicit request =>
+  def watch = Action {
+    implicit request =>
     session.get("login").map {login=>
       val user = GithubUser.fromSession(session)
       val rooms = APIs.rooms(user.token)
@@ -41,6 +40,5 @@ object Room extends Controller {
       Ok(views.html.index())
     }
   }
-
 
 }

@@ -5,6 +5,7 @@
 @implicitFieldConstructor = @{ FieldConstructor(views.html.twitterBootstrapInput.f) }
 
 @main("OctoChat:Room") {
+  <script>var users={};</script>
 
   @navbarWithLogin(author,icon){<li class="active"><a href="/room/@owner/@repo">@owner / @repo</a></li>}
 
@@ -18,22 +19,16 @@
   
   @talks.reverse.map { talk =>
     <div class="chat_row pull-center">
-      <span class="label label-inverse"><a href="https://github.com/@talk.author"><img class="icon_@talk.author nav_icon"> @talk.author</a></span>　<strong>@talk.message</strong>
+      <span class="label label-inverse"><a href="https://github.com/@talk.author"><img class="icon_@talk.author author_icon"> @talk.author</a></span>　<strong>@talk.message</strong>
     </div>
-    <script src="@routes.Assets.at("js/jquery-1.9.0.min.js")" type="text/javascript"></script>
-    <script>
-    $(function(){
-      $.get("/icon/@talk.author", function(data){
-        $(".icon_@talk.author").attr("src",data);
-      });
-    });
-    </script>
+    @icon_set(talk.author)
   }
   <hr><h6 class="text-right">@talks.size messages　　</h6>
 }{
 <script>
   $(document).ready(function () {
     $("input").attr("placeholder","Let's talk..");
+    @icon_load()
   });
 </script>
 }

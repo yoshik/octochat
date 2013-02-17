@@ -31,7 +31,7 @@ object APIs extends Controller {
     val user = GithubUser.fromSession(session)
     val jsonString = users_row(user.token,name)
     val json = Json.parse(jsonString)
-    Ok( views.html.echo( (json \ "avatar_url").as[String] ) )
+    Ok( views.html.icon (name) ((json \ "avatar_url").as[String]) )
   }
 
 }

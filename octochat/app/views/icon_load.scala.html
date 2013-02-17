@@ -1,0 +1,7 @@
+@()
+for (var u in users){
+  $.get("/icon/"+u, function(json){
+    var icon = jQuery.parseJSON(json);
+    $(".icon_"+icon.user).attr("src",icon.url);
+  });
+}

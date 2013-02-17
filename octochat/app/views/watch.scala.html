@@ -4,11 +4,13 @@
 @implicitFieldConstructor = @{ FieldConstructor(views.html.twitterBootstrapInput.f) }
 
 @main("OctoChat:Watch") {
+  <script>var users={};</script>
 
   @navbarWithLogin(author,icon){ }
 
   @talks.reverse.map { talk =>
     @mes(talk.author,talk.owner,talk.repo,talk.message)
+    @icon_set(talk.author)
   }
 
   <hr><h6 class="text-right">@talks.size messages　</h6>
@@ -17,6 +19,7 @@
 <script>
   $(document).ready(function () {
     $("#nav_watch").addClass("active");
+    @icon_load()
   });
 </script>
 }
